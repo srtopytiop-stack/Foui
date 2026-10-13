@@ -1,27 +1,28 @@
 /**
- * ATLASYNTH — Bilingual Dictionary (العربية / English)
+ * ATLASYNTH 2.0 — Bilingual Dictionary (العربية / English)
+ * Complete terminology for Science, Market Intel, Agents, and Statistics.
  * @license Apache-2.0
  */
 
 export const translations = {
   ar: {
     // Brand & App
-    appName: 'ATLASYNTH',
-    tagline: 'مختبر الحوسبة العلمية وأبحاث الأسواق المتقدمة',
+    appName: 'ATLASYNTH 2.0',
+    tagline: 'مختبر الحوسبة العلمية واستخبارات الأسواق والوكلاء المتخصصين',
     mobileFriendly: 'مهيأ للهاتف المحمول',
     zeroCostEngine: 'محرك مجاني محلي بالكامل',
     safetyGuaranteed: 'أمان عالي • صفر صفقات حقيقية',
 
     // Navigation Tabs
     tabScientific: 'المختبر العلمي',
-    tabBinance: 'مختبر Binance',
+    tabBinance: 'استخبارات السوق',
     tabResearch: 'المعرفة والأبحاث',
-    tabExperiments: 'التجارب الحسابية',
+    tabExperiments: 'الوكلاء والتجارب',
     tabTasks: 'المهام والتدقيق',
 
     // Common Actions
     runCalculation: 'تنفيذ الحساب',
-    calculating: 'جاري الحساب...',
+    calculating: 'جاري الحساب والتحليل...',
     reset: 'إعادة ضبط',
     exportData: 'تصدير البيانات',
     importData: 'استيراد',
@@ -37,7 +38,7 @@ export const translations = {
     timeElapsed: 'الوقت المنقضي',
     idempotencyKey: 'مفتاح منع التكرار',
 
-    // Scientific Lab
+    // Scientific Lab Subtabs
     scientificSubtabs: {
       linearAlgebra: 'الجبر الخطي والمصفوفات',
       calculusOde: 'المعادلات التفاضلية والتكامل',
@@ -92,7 +93,14 @@ export const translations = {
     flightTime: 'زمن التحليق',
     range: 'المدى الأفقي',
 
-    // Binance Spot Lab
+    // Binance Spot Lab & Market Intelligence Subtabs
+    marketSubtabs: {
+      singleAsset: 'تحليل الأصل المنفرد',
+      fullScanner: 'مسح شامل وترتيب الفرص',
+      scenarios: 'تحليل السيناريوهات المتنافسة',
+      backtester: 'المحاكي السببي (Backtest)',
+      statisticalValidation: 'التحقق الإحصائي المتقدم (DSR & PBO)',
+    },
     binanceDisclaimer: 'مختبر أبحاث وتحليل تاريخي حصرياً. لا يتم تنفيذ أي صفقات حقيقية أو استخدام مفاتيح سرية.',
     selectPair: 'زوج التداول',
     selectTimeframe: 'الفاصل الزمني',
@@ -111,6 +119,40 @@ export const translations = {
     regimeCompress: 'انضغاط سعري هادئ (Low Volatility)',
     hurstExponent: 'مؤشر هيرست (Hurst H)',
     hurstDescription: 'H > 0.5 استمرارية في الاتجاه • H < 0.5 ارتداد للمتوسط • H = 0.5 حركة عشوائية',
+
+    // Full Market Scanner & Opportunity Ranking
+    scanAllPairs: 'مسح جميع الأزواج المؤهلة',
+    scanningProgress: 'جاري فحص وتصفية أزواج السوق...',
+    rankedOpportunities: 'ترتيب الفرص وفق مصفوفة المعايير المتعددة',
+    opportunityScore: 'نقاط الفرصة',
+    concordance: 'توافق الأطر المتعددة',
+    riskLevel: 'مستوى المخاطرة',
+    filterByRegime: 'تصفية حسب نظام السوق',
+
+    // Scenario Analysis
+    scenarioTitle: 'السيناريوهات المتنافسة وشروط الإبطال',
+    scenarioDescription: 'صياغة فرضيات متعارضة مع تحديد شروط تحققها أو دحضها الصريحة لمنع التحيز التأكيدي.',
+    scenarioContinuation: 'سيناريو استمرار الاتجاه',
+    scenarioReversal: 'سيناريو استنفاد الحركة والارتداد',
+    scenarioExpansion: 'سيناريو توسع التقلب واختراق وهمي',
+    scenarioRange: 'سيناريو التذبذب العشوائي (اللا-فرصة)',
+    falsificationCondition: 'شرط إبطال الفرضية',
+    supportingEvidence: 'الأدلة المؤيدة',
+    refutingEvidence: 'الأدلة المعارضة',
+
+    // Advanced Statistical Validation
+    statValidationTitle: 'حزمة التحقق الإحصائي المتقدم ومكافحة التوفيق الزائد',
+    statValidationDesc: 'Walk-Forward, Deflated Sharpe Ratio, Probability of Backtest Overfitting (PBO), Bootstrap.',
+    runStatisticalValidation: 'تشغيل حزمة التحقق المتقدم',
+    dsrTitle: 'نسبة شارب المخفضة (Deflated Sharpe Ratio - DSR)',
+    dsrExplanation: 'تخفيض نسبة شارب الناتجة بناءً على التواء وتفرطح التوزيع وعدد الاختبارات المجراة (تعديل بيلي ولوبيز دي برادو).',
+    pboTitle: 'احتمالية التوفيق الزائد (Probability of Backtest Overfitting - PBO)',
+    pboExplanation: 'احتمالية أن تكون نتائج الاستراتيجية مجرد صدفة إحصائية غير قابلة للاستمرار خارج العينة.',
+    walkForwardTitle: 'التحقق الأمامي المتدرج (Walk-Forward Analysis)',
+    walkForwardDesc: 'تقسيم التاريخ لنافذة تدريب (In-Sample) متبوعة باختبار فوري مستقل (Out-of-Sample).',
+    monteCarloDrawdown: 'توزيع التراجع الأقصى عبر محاكاة مونت كارلو',
+    overfitRiskLow: 'مستوى منخفض لمخاطر التوفيق الزائد (الاستراتيجية قوية)',
+    overfitRiskHigh: 'تحذير: مخاطر توفيق زائد مرتفعة (النتائج مصادفة إحصائية)',
 
     // Backtest
     backtestTitle: 'محاكي الاستراتيجيات التاريخي (Backtest)',
@@ -135,6 +177,20 @@ export const translations = {
     equityCurve: 'منحنى نمو رأس المال',
     tradeLog: 'سجل الصفقات المحاكاة',
 
+    // Multi-Agent Council
+    agentCouncilTitle: 'مجلس الوكلاء المتخصصين للبحث والنقد المعرفي',
+    agentCouncilDesc: 'منظومة وكلاء مستقلين يتناظرون حول الفرضيات العلمية والسوقية لتمحيص الأدلة وكشف الثغرات.',
+    rolePlanner: 'وكيل التخطيط وتقسيم المهام',
+    roleMath: 'وكيل الرياضيات والحساب العددي',
+    roleData: 'وكيل البيانات وجودة السلاسل',
+    roleMarket: 'وكيل استخبارات السوق والأنظمة',
+    roleCritique: 'وكيل النقد والبحث عن فرط التوفيق (Adversarial)',
+    roleSecurity: 'وكيل الأمان ومراجعة الكود',
+    roleSynthesis: 'وكيل التقرير والتوليف النهائي',
+    startCouncilDebate: 'بدء مناظرة الوكلاء حول الفرضية',
+    councilConsensus: 'إجماع مجلس الوكلاء',
+    councilDebating: 'الوكلاء يتناظرون ويتفحصون الأدلة...',
+
     // Research & Knowledge
     researchHubTitle: 'مستودع المعرفة والأبحاث الموثقة',
     researchSubtitle: 'فهرسة وتتبع استشهادات وفصل بين الحقائق المثبتة والنماذج النظرية',
@@ -156,7 +212,6 @@ export const translations = {
     presetMonteCarloPi: 'تقدير قيمة π بطريقة مونت كارلو',
     presetNewtonRaphson: 'إيجاد جذور المعادلات بطريقة نيوتن-رافسون',
     presetFourierSeries: 'توليد متسلسلة فورييه لموجة مربعة',
-    presetHurstCalculation: 'حساب معامل هيرست لسلسلة عشوائية',
     runScript: 'تشغيل الكود في بيئة معزولة',
     executionTime: 'زمن المعالجة',
     executionConsole: 'مخرجات الطرفية والحساب',
@@ -173,22 +228,22 @@ export const translations = {
 
   en: {
     // Brand & App
-    appName: 'ATLASYNTH',
-    tagline: 'Scientific Computing & Financial Research Laboratory',
+    appName: 'ATLASYNTH 2.0',
+    tagline: 'Scientific Computing, Market Intelligence & Multi-Agent Laboratory',
     mobileFriendly: 'Mobile-First Architecture',
     zeroCostEngine: '100% Free & Local Compute',
     safetyGuaranteed: 'High Safety • Zero Real Trades',
 
     // Navigation Tabs
     tabScientific: 'Scientific Lab',
-    tabBinance: 'Binance Lab',
+    tabBinance: 'Market Intel',
     tabResearch: 'Research & Docs',
-    tabExperiments: 'Experiments',
+    tabExperiments: 'Agents & Code',
     tabTasks: 'Tasks & Audit',
 
     // Common Actions
     runCalculation: 'Execute Compute',
-    calculating: 'Computing...',
+    calculating: 'Analyzing & Computing...',
     reset: 'Reset',
     exportData: 'Export Data',
     importData: 'Import',
@@ -204,7 +259,7 @@ export const translations = {
     timeElapsed: 'Time Elapsed',
     idempotencyKey: 'Idempotency Key',
 
-    // Scientific Lab
+    // Scientific Lab Subtabs
     scientificSubtabs: {
       linearAlgebra: 'Linear Algebra & Matrices',
       calculusOde: 'Differential Equations (ODE)',
@@ -259,7 +314,14 @@ export const translations = {
     flightTime: 'Time of Flight',
     range: 'Total Range',
 
-    // Binance Spot Lab
+    // Market Intel Subtabs
+    marketSubtabs: {
+      singleAsset: 'Single Asset Analysis',
+      fullScanner: 'Full Market Screening & Rank',
+      scenarios: 'Competing Scenarios',
+      backtester: 'Causal Backtester',
+      statisticalValidation: 'Statistical Validation (DSR/PBO)',
+    },
     binanceDisclaimer: 'Research & simulation lab only. No real orders are executed and no private keys are accepted.',
     selectPair: 'Trading Pair',
     selectTimeframe: 'Interval',
@@ -278,6 +340,40 @@ export const translations = {
     regimeCompress: 'Low Volatility Compression',
     hurstExponent: 'Hurst Exponent (H)',
     hurstDescription: 'H > 0.5 Persistent Trend • H < 0.5 Mean-Reverting • H = 0.5 Random Walk',
+
+    // Full Market Scanner & Opportunity Ranking
+    scanAllPairs: 'Scan All Eligible Pairs',
+    scanningProgress: 'Scanning and filtering market pairs...',
+    rankedOpportunities: 'Ranked Opportunities Matrix',
+    opportunityScore: 'Opportunity Score',
+    concordance: 'Multi-Timeframe Concordance',
+    riskLevel: 'Risk Level',
+    filterByRegime: 'Filter by Regime',
+
+    // Scenario Analysis
+    scenarioTitle: 'Competing Market Hypotheses & Falsification',
+    scenarioDescription: 'Rigorous competitive scenario formulation with explicit invalidation conditions to prevent confirmation bias.',
+    scenarioContinuation: 'Trend Continuation Scenario',
+    scenarioReversal: 'Exhaustion & Mean Reversion Scenario',
+    scenarioExpansion: 'Volatility Expansion / Fake Breakout',
+    scenarioRange: 'Random Walk / No-Edge Regime',
+    falsificationCondition: 'Falsification Condition',
+    supportingEvidence: 'Supporting Evidence',
+    refutingEvidence: 'Refuting Evidence',
+
+    // Advanced Statistical Validation
+    statValidationTitle: 'Advanced Statistical Validation & Anti-Overfitting',
+    statValidationDesc: 'Walk-Forward, Deflated Sharpe Ratio, Probability of Backtest Overfitting (PBO), Bootstrap.',
+    runStatisticalValidation: 'Execute Statistical Validation Suite',
+    dsrTitle: 'Deflated Sharpe Ratio (DSR)',
+    dsrExplanation: 'Downgrades Sharpe ratio to adjust for trial variance, skewness, kurtosis, and sample size (Bailey & López de Prado).',
+    pboTitle: 'Probability of Backtest Overfitting (PBO)',
+    pboExplanation: 'Quantifies the likelihood that backtest outperformance is a statistical anomaly via combinatorial splits.',
+    walkForwardTitle: 'Walk-Forward Analysis',
+    walkForwardDesc: 'Progressive rolling In-Sample optimization followed by untouched Out-Of-Sample evaluation.',
+    monteCarloDrawdown: 'Bootstrap Monte Carlo Max Drawdown Distribution',
+    overfitRiskLow: 'Low Overfit Risk (Strategy Demonstrates True Edge)',
+    overfitRiskHigh: 'Warning: High Overfit Risk (Performance Likely Spurious)',
 
     // Backtest
     backtestTitle: 'Causal Strategy Backtester',
@@ -302,6 +398,20 @@ export const translations = {
     equityCurve: 'Equity Curve',
     tradeLog: 'Simulated Trade Log',
 
+    // Multi-Agent Council
+    agentCouncilTitle: 'Multi-Agent Research & Critique Council',
+    agentCouncilDesc: 'Autonomous specialized agents debating scientific and financial hypotheses to stress-test assumptions.',
+    rolePlanner: 'Task Planning Agent',
+    roleMath: 'Numerical & Science Agent',
+    roleData: 'Data Quality & Time-Series Agent',
+    roleMarket: 'Market Intelligence & Regimes Agent',
+    roleCritique: 'Adversarial Critique & Anti-Overfit Agent',
+    roleSecurity: 'Security & Code Isolation Agent',
+    roleSynthesis: 'Synthesis & Epistemic Reporting Agent',
+    startCouncilDebate: 'Convene Council Debate',
+    councilConsensus: 'Council Consensus & Findings',
+    councilDebating: 'Council is deliberating and cross-examining...',
+
     // Research & Knowledge
     researchHubTitle: 'Verified Research & Knowledge Corpus',
     researchSubtitle: 'Provenance tracking, citation graph, and epistemic confidence scoring',
@@ -323,7 +433,6 @@ export const translations = {
     presetMonteCarloPi: 'Monte Carlo Estimation of π',
     presetNewtonRaphson: 'Newton-Raphson Root Finding',
     presetFourierSeries: 'Fourier Series Square Wave Synthesis',
-    presetHurstCalculation: 'Hurst Exponent on Simulated Geometric Brownian Motion',
     runScript: 'Execute Sandboxed Script',
     executionTime: 'Execution Time',
     executionConsole: 'Calculation Console Output',

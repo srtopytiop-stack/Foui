@@ -1,5 +1,6 @@
 /**
- * ATLASYNTH — Shared Type Definitions & Domain Contracts
+ * ATLASYNTH 2.0 — Shared Domain Contracts & Type Definitions
+ * Universal Scientific, Computational & Market Intelligence Lab
  * @license Apache-2.0
  */
 
@@ -25,7 +26,7 @@ export type TaskStatus =
 
 export interface TaskRecord {
   id: string;
-  domain: 'scientific' | 'financial' | 'research' | 'experiment';
+  domain: 'scientific' | 'financial' | 'research' | 'experiment' | 'agent';
   title: string;
   status: TaskStatus;
   progress: number; // 0 - 100
@@ -101,7 +102,7 @@ export interface PhysicsSimulationResult {
   metrics: Record<string, number>;
 }
 
-// ─── Financial & Binance Spot Domain Models ───────────────────
+// ─── Financial & Market Intelligence Models ────────────────────
 
 export interface MarketCandle {
   openTime: number;
@@ -182,6 +183,78 @@ export type MarketRegime =
   | 'HIGH_VOLATILITY_EXPANSION'
   | 'LOW_VOLATILITY_COMPRESSION';
 
+// ─── ATLASYNTH 2.0: Advanced Statistical Validation ────────────
+
+export interface DeflatedSharpeResult {
+  rawSharpe: number;
+  deflatedSharpe: number; // DSR adjusted for trials & non-normality
+  pVal: number; // Probability that result is due to data snooping
+  skewness: number;
+  kurtosis: number;
+  trialsExamined: number;
+  isStatisticallySignificant: boolean;
+}
+
+export interface PBOResult {
+  pboProbability: number; // 0.0 to 1.0 (Probability of Backtest Overfitting)
+  medianRankDegradation: number;
+  combinationsEvaluated: number;
+  isOverfitRiskHigh: boolean;
+}
+
+export interface WalkForwardWindow {
+  windowIndex: number;
+  inSampleRange: { start: number; end: number };
+  outOfSampleRange: { start: number; end: number };
+  inSampleSharpe: number;
+  outOfSampleSharpe: number;
+  outOfSampleReturnPct: number;
+  robustnessRatio: number; // OOS / IS ratio
+}
+
+export interface WalkForwardResult {
+  windows: WalkForwardWindow[];
+  averageOutOfSampleReturn: number;
+  averageRobustnessRatio: number;
+  isStrategyRobust: boolean;
+}
+
+export interface MonteCarloDrawdownResult {
+  simulationsCount: number;
+  medianDrawdownPct: number;
+  percentile95DrawdownPct: number;
+  worstCaseDrawdownPct: number;
+  drawdownDistribution: Array<{ bin: string; count: number }>;
+}
+
+// ─── ATLASYNTH 2.0: Market Scanner & Scenarios ─────────────────
+
+export interface ScannedMarketPair {
+  symbol: string;
+  price: number;
+  change24h: number;
+  volume24h: number;
+  regime: MarketRegime;
+  hurst: number;
+  volatility: number;
+  rsi: number;
+  score: number; // 0 - 100 ranking score
+  concordanceScore: number; // Multi-timeframe agreement %
+  primaryOpportunity: string;
+  riskLevel: 'LOW' | 'MEDIUM' | 'HIGH';
+}
+
+export interface MarketScenario {
+  id: string;
+  name: string;
+  description: string;
+  supportingEvidence: string[];
+  refutingEvidence: string[];
+  falsificationConditions: string[];
+  timeHorizon: string;
+  epistemicConfidence: number; // 0.0 - 1.0
+}
+
 // ─── Research & Knowledge Domain Models ───────────────────────
 
 export type EpistemicStatus =
@@ -198,7 +271,7 @@ export interface ResearchDocument {
   abstract: string;
   category: 'mathematics' | 'physics' | 'quantitative_finance' | 'computer_science' | 'biology';
   epistemicStatus: EpistemicStatus;
-  confidenceScore: number; // 0.0 - 1.0 (0% - 100%)
+  confidenceScore: number;
   sourceName: string;
   sourceUrl?: string;
   license: string;
@@ -209,6 +282,36 @@ export interface ResearchDocument {
   keyFormulas?: string[];
   userNotes?: string;
   verified: boolean;
+}
+
+// ─── Multi-Agent Orchestration Models ─────────────────────────
+
+export type AgentRole =
+  | 'PLANNER'
+  | 'MATH_SCIENTIST'
+  | 'DATA_ENGINEER'
+  | 'MARKET_ANALYST'
+  | 'ADVERSARIAL_CRITIQUE'
+  | 'SECURITY_INSPECTOR'
+  | 'SYNTHESIS_REPORTER';
+
+export interface AgentMessage {
+  id: string;
+  role: AgentRole;
+  agentName: string;
+  timestamp: number;
+  content: string;
+  status: 'ANALYZING' | 'ARGUMENT' | 'OBJECTION' | 'CONSENSUS' | 'WARNING';
+  evidenceRefs?: string[];
+}
+
+export interface AgentCouncilSession {
+  id: string;
+  question: string;
+  messages: AgentMessage[];
+  status: 'idle' | 'debating' | 'consensus_reached' | 'dissent_recorded';
+  finalConclusion?: string;
+  overfitWarning?: string;
 }
 
 // ─── Experiment & Scripting Models ────────────────────────────

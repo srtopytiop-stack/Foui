@@ -90,7 +90,7 @@ class TaskManager {
    * Registers a task. Returns existing result if an identical idempotent task succeeded.
    */
   public registerTask(
-    domain: 'scientific' | 'financial' | 'research' | 'experiment',
+    domain: 'scientific' | 'financial' | 'research' | 'experiment' | 'agent',
     title: string,
     idempotencyKey: string,
     inputSummary?: Record<string, any>
