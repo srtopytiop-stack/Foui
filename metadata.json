@@ -1,0 +1,6 @@
+{
+  "name": "ATLASYNTH",
+  "description": "Multi-disciplinary scientific computing, simulation, research, and financial lab platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
